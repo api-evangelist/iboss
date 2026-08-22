@@ -1,23 +1,127 @@
 aid: iboss
 name: iboss
-description: 'iboss is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: iboss, Inc. is a Boston-headquartered cybersecurity company founded in 2003 that operates
+  an AI-powered, cloud-native Zero Trust SASE (Secure Access Service Edge) platform used by more than
+  4,000 enterprise, US federal, state and local government, and K-12 education organizations. The platform
+  consolidates Secure Web Gateway (SWG), Cloud Access Security Broker (CASB), Zero Trust Network Access
+  (ZTNA), Data Loss Prevention (DLP), Remote Browser Isolation (RBI), SaaS Security Posture Management
+  (SSPM), DNS security, SD-WAN and AI chat monitoring into a single containerized service in which each
+  customer receives dedicated gateway containers rather than shared infrastructure. iboss is FedRAMP and
+  StateRAMP authorized and holds SOC 2 Type II, FIPS 140-2, HIPAA, CJIS, FERPA and GDPR alignment. Platform
+  administration and reporting run over an authenticated REST surface at api.ibosscloud.com/ibcloud/web,
+  which third parties including Datadog, Axonius, Google Security Operations and D3 Security integrate
+  against; iboss publishes no public OpenAPI definition, developer portal or API reference, and its documentation
+  host redirects to a sign-in-gated GitBook space.
+image: https://www.iboss.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/iboss/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
-apis: []
+- Security
+- Cybersecurity
+- Zero Trust
+- SASE
+- Secure Web Gateway
+- CASB
+- ZTNA
+- Data Loss Prevention
+- Network Security
+- Cloud Security
+- Compliance
+apis:
+- name: iboss Zero Trust SSE Platform API
+  description: Authenticated REST administration and reporting surface for the iboss Zero Trust SASE/SSE
+    cloud platform, served under the /ibcloud/web path on the iboss cloud gateway hosts. Probed anonymously
+    it answers HTTP 401 and issues XSRF-TOKEN and JSESSIONID cookies scoped to /ibcloud, confirming a
+    live authenticated API rather than a static site. iboss publishes no public OpenAPI/Swagger definition
+    and no public API reference; access requires an active iboss Zero Trust SSE account with administrative
+    privileges. Recorded here from probe evidence only — no contract was found, and none has been authored
+    on the provider's behalf.
+  humanURL: https://www.iboss.com/support
+  baseURL: https://api.ibosscloud.com/ibcloud/web
+  tags:
+  - Security
+  - Zero Trust
+  - SASE
+  - Administration
+  properties:
+  - type: Authentication
+    url: authentication/iboss-authentication.yml
+  - type: Login
+    url: https://accounts.iboss.com/ibossauth/index.html
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/iboss-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/iboss_stock/
+  url: https://www.iboss.com
+- type: Support
+  url: https://www.iboss.com/support
+- type: HelpCenter
+  url: https://support.ibosscloud.com/hc/en-us
+- type: Blog
+  url: https://www.iboss.com/blog
+- type: BlogRSS
+  url: https://www.iboss.com/rss.xml
+- type: Pricing
+  url: https://www.iboss.com/pricing
+- type: Login
+  url: https://accounts.iboss.com/ibossauth/index.html
+- type: TermsOfService
+  url: https://www.iboss.com/terms
+- type: PrivacyPolicy
+  url: https://www.iboss.com/privacy-policy
+- type: StatusPage
+  url: https://status.iboss.com/ibcloud/app/cloudStatus.html
+- type: Compliance
+  url: https://www.iboss.com/compliance
+- type: LLMsTxt
+  url: llms/iboss-llms.txt
+- type: WellKnown
+  url: well-known/iboss-well-known.yml
+- type: Authentication
+  url: authentication/iboss-authentication.yml
+- type: Conformance
+  url: conformance/iboss-conformance.yml
+- type: Lifecycle
+  url: lifecycle/iboss-lifecycle.yml
+- type: Conventions
+  url: conventions/iboss-conventions.yml
+- type: RateLimits
+  url: rate-limits/iboss-rate-limits.yml
+- type: Plans
+  url: plans/iboss-plans-pricing.yml
+- type: TrustCenter
+  url: security/iboss-trust-center.yml
+- type: Packages
+  url: packages/iboss-packages.yml
+x-enrichment:
+  date: '2026-08-22'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: 'iboss runs a live platform API — api.ibosscloud.com/ibcloud/web answers HTTP 401 with XSRF-TOKEN
+    and JSESSIONID cookies and a "Server: iboss cloud" header — but publishes no contract for it: docs.iboss.com
+    307-redirects to a sign-in-gated app.gitbook.com space rather than a published docs site, and the
+    344-URL sitemap contains no /api, /developer or /reference route.'
+  evidence:
+  - url: https://api.ibosscloud.com/ibcloud/web/users
+    status: 401
+  - url: https://docs.iboss.com
+    status: 307
+  - url: https://api.ibosscloud.com/openapi.json
+    status: 404
+  - url: https://www.iboss.com/llms.txt
+    status: 200
+  checked: '2026-08-22'

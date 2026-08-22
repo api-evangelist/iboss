@@ -1,0 +1,24 @@
+generated: '2026-08-22'
+method: none
+source: live probes 2026-08-22
+status: absent
+note: >-
+  iboss ships NO MCP server — neither a hosted remote endpoint nor a local stdio package.
+  No candidate tool list could be derived either, because iboss publishes no OpenAPI to
+  derive operations from. This file records the negative so a later round does not repeat
+  the sweep. NO MCPServer pointer is emitted in apis.yml.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+probes:
+- {url: 'https://www.iboss.com/mcp', method: 'POST tools/list', status: 200, verdict: 'SPA catch-all shell (18306 bytes) — NOT an MCP endpoint'}
+- {url: 'https://api.ibosscloud.com/mcp', method: 'POST tools/list', status: 404}
+- {url: 'https://mcp.iboss.com/mcp', method: 'POST tools/list', status: 0, verdict: DNS does not resolve}
+registry_check:
+  npm: no first-party @iboss MCP package (see packages/iboss-packages.yml)
+  pypi: none
+tools: []

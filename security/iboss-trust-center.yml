@@ -1,0 +1,49 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.iboss.com/compliance
+note: >-
+  iboss operates no dedicated trust-center subdomain (no trust.iboss.com), but it does
+  publish a real, substantive compliance and certifications page listing named, dated
+  attestations — which is the surface the trust_center check is looking for. The
+  automated probe (probe-security-programs.py) returned trust=none because it looks for
+  a trust-center host pattern; this artifact upgrades that to a searched result from the
+  page itself. Certifications are recorded AS PUBLISHED BY iboss. API Evangelist has not
+  audited or independently verified any of them.
+trust_center:
+  present: true
+  url: https://www.iboss.com/compliance
+  status: 200
+  dedicated_subdomain: false
+  secondary_url: https://www.iboss.com/cloud-compliance-and-certifications
+  machine_readable: https://www.iboss.com/.well-known/brand-facts.json
+  note: >-
+    brand-facts.json carries a machine-readable `certifications` array, which is unusual
+    and genuinely useful — most providers publish certifications only as page copy.
+certifications:
+- {name: 'SOC 1 Type II', category: attestation, note: 'Non-CPA; internal controls over financial reporting'}
+- {name: 'SOC 2 Type II', category: attestation, note: 'Non-CPA; security, availability, confidentiality'}
+- {name: ISO 27001, category: certification, note: Information security management systems}
+- {name: ISO 9001, category: certification, note: Quality management systems}
+- {name: FedRAMP Authorized, category: government-authorization, note: US federal cloud services authorization}
+- {name: StateRAMP Authorized, category: government-authorization, note: US state and local government}
+- {name: CJIS, category: government-compliance, note: Criminal justice information handling}
+- {name: 'CSA STAR Level 1', category: cloud-assurance, note: Cloud Security Alliance self-assessment}
+- {name: 'CSA STAR Level 2', category: cloud-assurance, note: Cloud Security Alliance third-party assessment}
+- {name: Cyber Essentials, category: certification, note: UK government-backed scheme}
+- {name: 'CMMC 2.0', category: readiness, note: '125 controls mapped across 14 security domains; published as readiness/coverage, not an award'}
+- {name: 'FIPS 140-2', category: validation, source: brand-facts.json}
+- {name: HIPAA, category: regulatory-alignment, source: brand-facts.json}
+- {name: FERPA, category: regulatory-alignment, source: brand-facts.json}
+- {name: GDPR, category: regulatory-alignment, source: brand-facts.json}
+discrepancy_note: >-
+  The /compliance page and /.well-known/brand-facts.json do not agree. The page lists
+  ISO 27001, ISO 9001, SOC 1 Type II, CSA STAR L1/L2 and Cyber Essentials, which
+  brand-facts.json omits; brand-facts.json lists FIPS 140-2, HIPAA, FERPA and GDPR,
+  which the page does not surface as badges. The union is recorded above with the
+  source of each. This is a real provider-side inconsistency worth reporting back:
+  the machine-readable file iboss offers to AI engines is the LESS complete of the two.
+sub_processors:
+  published: false
+pen_test_reports:
+  published: false
+  note: No public summary or on-request report portal was found.

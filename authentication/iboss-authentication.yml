@@ -1,0 +1,77 @@
+generated: '2026-08-22'
+method: probed
+source: https://api.ibosscloud.com/ibcloud/web/users
+note: >-
+  DERIVED FROM LIVE PROBE RESPONSE HEADERS ONLY. iboss publishes no OpenAPI definition
+  and no public authentication documentation, so no securityScheme could be read from a
+  contract. Everything below was observed on an anonymous request and nothing has been
+  inferred beyond what the response actually returned. The scheme names used by the
+  platform's own login flow are NOT published and are therefore not asserted here.
+surface:
+  base_url: https://api.ibosscloud.com/ibcloud/web
+  alternate_hosts:
+  - https://cloud.iboss.com/ibcloud/web
+  auth_host: https://accounts.iboss.com/ibossauth/index.html
+  public_documentation: false
+observed:
+  anonymous_request:
+    method: GET
+    path: /ibcloud/web/users
+    status: 401
+    server_header: iboss cloud
+    content_length: 0
+    www_authenticate: null
+    note: >-
+      Returns a bare 401 with no WWW-Authenticate challenge and an empty body, so the
+      API does not advertise its scheme to an unauthenticated caller. An agent cannot
+      discover how to authenticate from the response.
+  cookies_issued:
+  - name: XSRF-TOKEN
+    path: /ibcloud
+    attributes: [Secure]
+    http_only: false
+    purpose: >-
+      Double-submit CSRF token. Readable by JavaScript by design so the console can echo
+      it in a request header — the classic Spring Security XSRF pattern.
+  - name: JSESSIONID
+    path: /ibcloud
+    attributes: [Secure, HttpOnly]
+    http_only: true
+    purpose: Server-side session identifier for the authenticated console session.
+  security_headers:
+    strict_transport_security: max-age=63072000; includeSubDomains
+    x_frame_options: DENY
+    x_content_type_options: nosniff
+    x_xss_protection: 1; mode=block
+    x_robots_tag: noindex, nofollow
+    cache_control: no-cache, no-store, max-age=0, must-revalidate
+schemes:
+- id: session-cookie
+  type: http
+  mechanism: session
+  in: cookie
+  name: JSESSIONID
+  evidence: Set-Cookie observed on anonymous 401 from /ibcloud/web/users
+  confidence: high
+- id: xsrf-token
+  type: apiKey
+  mechanism: csrf-double-submit
+  in: cookie
+  name: XSRF-TOKEN
+  evidence: Set-Cookie observed on anonymous 401 from /ibcloud/web/users
+  confidence: high
+  note: >-
+    A CSRF defence, not an authorization credential. Recorded because it is a required
+    part of any successful state-changing call against this surface.
+oauth2: false
+api_keys:
+  published: false
+  note: >-
+    No public documentation of an API key or token issuance flow was found on any iboss
+    host, in the sitemap (344 URLs, no /api or /developer route), or in llms.txt.
+mutual_tls: false
+gaps:
+- No public authentication documentation page.
+- No WWW-Authenticate header on 401, so the scheme is not machine-discoverable.
+- No OpenAPI securitySchemes block, because no OpenAPI is published.
+- No OAuth 2.0 or OIDC discovery document on any host (see well-known/iboss-well-known.yml).

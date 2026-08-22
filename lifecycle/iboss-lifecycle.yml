@@ -1,0 +1,105 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://status.iboss.com/ibcloud/app/cloudStatus.html, https://www.iboss.com/sitemap.xml,
+  https://www.iboss.com/news, plus live contract-discovery probes
+status_page:
+  present: true
+  url: https://status.iboss.com/ibcloud/app/cloudStatus.html
+  status: 200
+  note: >-
+    status.iboss.com redirects (client-side) to /ibcloud/app/cloudStatus.html, an
+    8,400-byte Angular application (ng-app="cloudStatus") served by the iboss cloud
+    platform itself rather than a third-party status vendor. It carries
+    meta robots=noindex. No machine-readable status JSON/RSS feed was found.
+  machine_readable_feed: false
+versioning:
+  policy_published: false
+  scheme: unknown
+  note: >-
+    No API versioning policy is published. The observed API path (/ibcloud/web/...)
+    carries no version segment, and no version header was returned on the anonymous
+    401 response.
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  rfc8594: false
+  note: >-
+    No deprecation policy page exists in the 344-URL sitemap and none was found by
+    search. RFC 8594 Sunset/Deprecation header support could not be observed, because
+    no operation is reachable without customer credentials. Recorded as unknown, not absent.
+sla:
+  published: false
+  note: >-
+    No public SLA page. Service commitments appear only inside the customer
+    terms of service (https://www.iboss.com/iboss-cloud-services-end-user-terms-of-service-agreement).
+changelog:
+  published: false
+  note: >-
+    No dated product changelog or release-notes page exists. The closest published
+    surface is the news/press feed at https://www.iboss.com/news with an RSS feed at
+    https://www.iboss.com/rss.xml — company announcements, not API release notes.
+    No ChangeLog pointer is emitted, because a press feed is not a changelog.
+  nearest_surface: https://www.iboss.com/rss.xml
+contract_discovery_log:
+  note: >-
+    Recorded so a later round does not repeat the sweep. Every probe below was run
+    anonymously on 2026-08-22.
+  openapi:
+    found: false
+    probed:
+    - {url: 'https://api.ibosscloud.com/openapi.json', status: 404}
+    - {url: 'https://api.ibosscloud.com/swagger.json', status: 404}
+    - {url: 'https://api.ibosscloud.com/v2/api-docs', status: 404}
+    - {url: 'https://api.ibosscloud.com/ibcloud/web/openapi.json', status: 401}
+    - {url: 'https://api.ibosscloud.com/ibcloud/web/swagger.json', status: 401}
+    - {url: 'https://api.ibosscloud.com/ibcloud/api-docs', status: 404}
+    - {url: 'https://cloud.iboss.com/openapi.json', status: 404}
+    - {url: 'https://cloud.iboss.com/swagger.json', status: 404}
+    - {url: 'https://cloud.iboss.com/ibcloud/web/openapi.json', status: 401}
+    - {url: 'https://accounts.iboss.com/openapi.json', status: 404}
+    - {url: 'https://accounts.iboss.com/swagger.json', status: 404}
+    note: >-
+      The two 401s are meaningful: /ibcloud/web/* is behind the platform auth filter,
+      which returns 401 for ANY path under it, so they are not evidence that a spec
+      exists there. The 404s at the host root are genuine 196-byte Apache 404s.
+  graphql:
+    found: false
+    probed:
+    - {url: 'https://api.ibosscloud.com/graphql', status: 404}
+    - {url: 'https://api.ibosscloud.com/ibcloud/web/graphql', status: 403}
+    - {url: 'https://www.iboss.com/graphql', status: 200, verdict: SPA shell, 18306 bytes — not a GraphQL endpoint}
+  mcp:
+    found: false
+    probed:
+    - {url: 'https://api.ibosscloud.com/mcp', status: 404}
+    - {url: 'https://mcp.iboss.com/mcp', status: 0, verdict: DNS does not resolve}
+    - {url: 'https://www.iboss.com/mcp', status: 200, verdict: SPA shell, 18306 bytes — not an MCP endpoint}
+  agent_card:
+    found: false
+    note: >-
+      All /.well-known/agent-card.json and /.well-known/agent.json probes either 404 on
+      the gateway hosts or return the marketing-site SPA shell on www.iboss.com. NO a2a/
+      artifact was written — this pipeline never authors an agent card.
+  grpc_protobuf:
+    found: false
+    note: No .proto published on any iboss host; no iboss organization on GitHub or buf.build.
+  wsdl:
+    found: false
+    probed:
+    - {url: 'https://api.ibosscloud.com/ibcloud/web?wsdl', status: 401}
+    note: No SOAP contract advertised in any iboss or partner documentation.
+  asyncapi_webhooks:
+    found: false
+    note: >-
+      No AsyncAPI document and no public webhook catalog. iboss ships log forwarding to
+      SIEM targets (Splunk, Microsoft Sentinel, Datadog) configured inside the customer
+      console, which is an outbound streaming feature rather than a published event contract.
+  docs_host:
+    url: https://docs.iboss.com
+    status: 307
+    redirects_to: https://app.gitbook.com/o/yfqnaocKwjvCiJz9lY8L/s/7IcJ5r3m0LmQvlBByU8O/
+    verdict: >-
+      Redirects to the GitBook APPLICATION (app.gitbook.com), i.e. the authoring/space
+      URL requiring sign-in, not a published docs site. There is no anonymously readable
+      iboss documentation host.

@@ -1,0 +1,99 @@
+generated: '2026-08-22'
+method: probed
+source: >-
+  https://api.ibosscloud.com/ibcloud/web/users (live anonymous probe headers);
+  no OpenAPI and no public convention documentation exist to derive from
+note: >-
+  There is no published API reference, style guide or convention documentation for the
+  iboss platform API, and no contract to derive from. Everything recorded here comes
+  from response headers observed on an anonymous request, or is explicitly marked
+  unknown. Nothing has been inferred from what a SASE admin API "usually" does.
+auth_style:
+  model: session cookie (JSESSIONID) plus a double-submit XSRF token
+  header: null
+  documented: false
+  detail: See authentication/iboss-authentication.yml for the observed evidence.
+base_path:
+  value: /ibcloud/web
+  versioned: false
+  detail: No version segment appears in the path and no version header was returned.
+idempotency:
+  supported: unknown
+  header: null
+  documented: false
+  scope: null
+  retention: null
+  detail: >-
+    No idempotency key header is documented and none could be observed, because no
+    write operation is reachable anonymously. Recorded as unknown rather than false.
+    NO Idempotency pointer is emitted in apis.yml — the 9-point idempotency check must
+    not be credited on an unverified surface.
+pagination:
+  style: unknown
+  params: []
+  response_fields: []
+  documented: false
+expansion:
+  supported: unknown
+  documented: false
+metadata:
+  supported: unknown
+  documented: false
+request_id_tracing:
+  header: null
+  observed: false
+  detail: >-
+    No X-Request-Id, X-Correlation-Id, traceparent or equivalent header was returned on
+    the anonymous 401. An agent has no published correlation identifier to quote in a
+    support ticket.
+versioning:
+  scheme: unknown
+  documented: false
+  detail: See lifecycle/iboss-lifecycle.yml.
+error_envelope:
+  shape: unknown
+  rfc9457: false
+  detail: >-
+    The observed 401 returned Content-Length 0 — an empty body with no error envelope,
+    no code, and no message. No error catalog is published, so no errors/ artifact was
+    written; there was nothing real to catalog.
+rate_limit_signaling:
+  headers: []
+  documented: false
+  detail: See rate-limits/iboss-rate-limits.yml.
+security_headers_observed:
+  strict_transport_security: max-age=63072000; includeSubDomains
+  x_frame_options: DENY
+  x_content_type_options: nosniff
+  x_xss_protection: 1; mode=block
+  x_robots_tag: noindex, nofollow
+  cache_control: no-cache, no-store, max-age=0, must-revalidate
+  note: >-
+    A genuinely strong transport/browser security posture on the API host — HSTS with a
+    two-year max-age and includeSubDomains, frame denial and nosniff are all present.
+    This is the one dimension where the surface measures well.
+dry_run_mode:
+  supported: unknown
+  documented: false
+reversibility:
+  grade: undocumented
+  write_surface: unknown
+  detail: >-
+    iboss publishes no operation reference, so no reversal operation (cancel, restore,
+    undo, rollback) and no reversal WINDOW could be identified for any write. The
+    platform plainly has write surfaces — policy, group, user and gateway administration
+    are what the console does — so this is NOT the `na` case that applies to a read-only
+    API; it is a genuine documentation absence on a surface where reversal matters,
+    since an erroneous policy push on a Zero Trust gateway can cut off access for an
+    entire organization.
+  reversal_operations: []
+  windows: []
+  na: false
+  note: >-
+    NO window is asserted. Inventing one here would be the single most expensive error
+    available in this artifact, because an agent would act on it.
+gaps:
+- No published convention or style documentation of any kind.
+- No error envelope returned on the one observable response.
+- No request correlation header.
+- Idempotency, pagination, dry-run and reversibility are all undocumented.

@@ -1,0 +1,31 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  npm registry search, PyPI, RubyGems, crates.io, buf.build and GitHub searched
+  2026-08-22 for a first-party iboss client library
+package_count: 0
+official_package_count: 0
+note: >-
+  NO first-party iboss SDK or client library exists in any public package registry.
+  The npm name-space matches are all unrelated third-party projects — iboss-chat-lib,
+  iboss-my-lib and iboss-preview-my-lib are Angular tutorial scaffolds, iboss-sdk is a
+  Vue 3 + Vite starter template unrelated to iboss the security vendor, @iboss/terrain
+  is a fork of the Terra blockchain "terrain" tool, and @digital-rd/iboss-tool is a
+  third-party file-diff utility. None is published by iboss, Inc. PyPI, RubyGems and
+  crates.io return no iboss package at all. NO SDKs pointer is emitted, and none of
+  these packages is recorded as an entry — listing a namesake package as a provider SDK
+  is exactly the misattribution this field exists to prevent.
+registries_checked:
+- {registry: npm, query: iboss, first_party_hits: 0, status: 200}
+- {registry: pypi, probed: [iboss, iboss-sdk, ibosscloud, pyiboss], status: 404, first_party_hits: 0}
+- {registry: rubygems, probed: [iboss], status: 404, first_party_hits: 0}
+- {registry: crates.io, query: iboss, first_party_hits: 0, status: 200}
+- {registry: buf.build, probed: ['https://buf.build/iboss'], first_party_hits: 0, note: no organization exists}
+- {registry: github, note: 'github.com/iboss is an unrelated personal user account, not an iboss, Inc. organization'}
+namesake_packages_rejected:
+- {name: iboss-sdk, registry: npm, version: 1.1.20, published: '2023-04-22', reason: 'Vue 3 + Vite starter template; unrelated to iboss, Inc.'}
+- {name: iboss-chat-lib, registry: npm, version: 1.0.1, published: '2019-10-08', reason: Angular tutorial scaffold
+    }
+- {name: '@iboss/terrain', registry: npm, version: 0.0.9, published: '2022-03-28', reason: Terra blockchain tooling fork}
+- {name: '@digital-rd/iboss-tool', registry: npm, version: 1.1.5, published: '2025-05-20', reason: third-party file-diff utility}
+packages: []

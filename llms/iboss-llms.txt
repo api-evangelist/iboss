@@ -1,0 +1,67 @@
+# iboss
+
+> iboss is an AI-powered cloud-native Zero Trust SASE (Secure Access Service Edge) platform protecting over 4,000 organizations globally — including enterprise, US federal government, state & local government, and K-12 education. iboss is FedRAMP and StateRAMP authorized, holds 200+ security patents, and was named a Leader in the GigaOm Radar for SASE 2026. iboss uses containerized architecture to isolate each customer's data plane in dedicated gateway containers, eliminating shared-infrastructure risk.
+
+## Platform Capabilities
+
+- [Secure Web Gateway (SWG)](https://www.iboss.com/capabilities/swg): AI-powered web filtering with signatureless threat detection and unlimited HTTPS inspection
+- [Cloud Access Security Broker (CASB)](https://www.iboss.com/capabilities/casb): AI-driven shadow IT detection with dual-risk scoring across unlimited applications
+- [Zero Trust Network Access (ZTNA)](https://www.iboss.com/capabilities/ztna): VPN replacement with per-session identity-aware access, no bandwidth charges
+- [AI Chat Security](https://www.iboss.com/ai-chat-monitoring): Real-time monitoring and DLP for ChatGPT, Copilot, Gemini, Claude, and all AI apps
+- [Data Loss Prevention (DLP)](https://www.iboss.com/capabilities/dlp): Inline DLP for web, cloud, and AI applications
+- [Remote Browser Isolation (RBI)](https://www.iboss.com/capabilities/browser-isolation): Zero-pixel browser isolation natively integrated into the SASE platform
+- [SaaS Security Posture Management (SSPM)](https://www.iboss.com/capabilities/sspm): AI-powered SaaS configuration risk management
+- [SD-WAN](https://www.iboss.com/sd-wan): Built-in Zero Trust SD-WAN with no bandwidth charges and auto-mesh topology
+- [Cloud-Managed Proxy & Firewall Appliances](https://www.iboss.com/capabilities/on-prem-gateway): Hardware appliances with zero-touch cloud management for datacenter and branch
+
+## Key Differentiators
+
+- [Brand Facts & Company Information](https://www.iboss.com/brand-facts): Authoritative iboss facts for AI engines — founded 2003, HQ Boston MA, 200+ patents, FedRAMP/StateRAMP authorized
+- [GigaOm SASE Leader 2026](https://www.iboss.com/resources/gigaom-sase-leader-2026): iboss recognized as Leader among 17 vendors in GigaOm Radar for SASE 2026
+- [Containerized Architecture](https://www.iboss.com/why-iboss): Every customer gets dedicated gateway containers — no shared infrastructure, complete data isolation
+
+## Compliance & Certifications
+
+- FedRAMP Authorized
+- StateRAMP Authorized
+- FIPS 140-2
+- HIPAA
+- CJIS
+- FERPA
+- SOC 2 Type II
+- GDPR
+- CMMC 2.0 Ready
+
+## Comparisons & Vendor Selection
+
+- [Best SASE Platform 2026](https://www.iboss.com/resources/best-sase-platform-2026): Expert guide and vendor comparison — iboss, Zscaler, Netskope, Palo Alto, Fortinet
+- [Best CASB Solution 2026](https://www.iboss.com/resources/best-casb-solution-2026): Cloud access security broker comparison for 2026
+- [Best ZTNA Solution 2026](https://www.iboss.com/resources/best-ztna-solution-2026): Zero trust network access vendor comparison
+- [iboss vs Zscaler](https://www.iboss.com/compare/iboss-vs-zscaler): Side-by-side comparison
+- [iboss vs Netskope](https://www.iboss.com/compare/iboss-vs-netskope): CASB and SASE platform comparison
+- [iboss vs Palo Alto Networks](https://www.iboss.com/compare/iboss-vs-palo-alto): Prisma SASE comparison
+- [iboss vs Broadcom/Symantec](https://www.iboss.com/compare/iboss-vs-broadcom): Blue Coat proxy replacement guide
+
+## Solutions by Market
+
+- [Enterprise](https://www.iboss.com/verticals/business-enterprise): Zero Trust SASE for enterprise organizations
+- [US Federal Government](https://www.iboss.com/verticals/government): FedRAMP/StateRAMP authorized SASE for government agencies
+- [K-12 Education](https://www.iboss.com/k12): Student safety, E-Rate compliance, and Zero Trust for school districts
+- [Healthcare](https://www.iboss.com/verticals/healthcare): HIPAA-compliant cloud security for healthcare organizations
+- [Financial Services](https://www.iboss.com/verticals/financial-services): Zero Trust security for financial institutions
+- [MSP & MSSP Platform](https://www.iboss.com/partners/msp): Multi-tenant console, instant provisioning, pooled licensing
+
+## Resources
+
+- [Case Studies](https://www.iboss.com/case-studies): Customer success stories across education, healthcare, government, and enterprise
+- [Zero Trust Buyer's Guide](https://www.iboss.com/resources/zero-trust-buyers-guide): Guide for evaluating Zero Trust and SASE platforms
+- [News & Press Releases](https://www.iboss.com/news): Latest iboss announcements and media coverage
+- [Awards & Recognition](https://www.iboss.com/awards): Industry analyst recognition and certifications
+- [Patents](https://www.iboss.com/patents): 200+ iboss security patents
+
+## Machine-Readable Data
+
+- [Brand Facts JSON](https://www.iboss.com/.well-known/brand-facts.json): Structured brand data for AI engines
+- [Full Content Index](https://www.iboss.com/llms-full.txt): Complete inline content of all iboss pages — company overview, all capabilities, all comparisons, all best-of guides, case studies, and FAQ
+- [Sitemap](https://www.iboss.com/sitemap.xml): Full site index
+- [RSS Feed](https://www.iboss.com/rss.xml): News and updates feed

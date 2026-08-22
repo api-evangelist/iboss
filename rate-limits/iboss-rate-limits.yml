@@ -1,0 +1,23 @@
+generated: '2026-08-22'
+method: searched
+source: >-
+  https://api.ibosscloud.com/ibcloud/web/users (live anonymous probe); iboss sitemap
+  (344 URLs) and llms.txt/llms-full.txt searched for a published limits reference
+limit_count: 0
+note: >-
+  iboss publishes no rate-limit documentation of any kind. There is no developer portal,
+  no API reference and no limits page in the 344-URL sitemap. The anonymous 401 from
+  /ibcloud/web/users returned NO rate-limit headers — no X-RateLimit-*, no RateLimit-*
+  (RFC 9331 style), and no Retry-After — so nothing could be observed at runtime either.
+  An honest zero: neither documented nor observable. Note that the 401 is returned
+  before any quota accounting would apply, so absence of headers on this response is
+  weaker evidence than absence on an authenticated 200 would be.
+response_headers_observed: []
+headers_documented: []
+exhaustion_status_code: unknown
+limits: []
+gaps:
+- No published rate-limit or throttling policy.
+- No RateLimit-* or X-RateLimit-* headers on any anonymously reachable response.
+- No Retry-After header observed.
+- Runtime behaviour under load cannot be measured without customer credentials.

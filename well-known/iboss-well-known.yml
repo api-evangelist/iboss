@@ -1,0 +1,138 @@
+generated: '2026-08-22'
+method: searched
+source: live probes of /.well-known/* on every iboss host in apis.yml
+note: >-
+  www.iboss.com is a single-page application that answers HTTP 200 with an identical
+  18,306-byte HTML shell for EVERY unmatched path, including every /.well-known/*
+  path. Those 200s are catch-all responses, not documents, and are recorded below
+  with file: null so they cannot be mistaken for a served surface. Exactly one real
+  /.well-known/ document is served: brand-facts.json, a 5,414-byte JSON object that
+  is distinct from the shell and is advertised by the provider's own llms.txt under
+  "Machine-Readable Data". The API gateway hosts (api.ibosscloud.com, cloud.iboss.com,
+  accounts.iboss.com) return genuine 196-byte Apache 404s for every /.well-known/
+  path — a clean, trustworthy negative. No security.txt is served on any host, so no
+  SecurityTxt pointer is emitted.
+soft_404_control:
+  host: https://www.iboss.com
+  path: /.well-known/this-path-does-not-exist-ae-control
+  status: 200
+  bytes: 18306
+  verdict: catch-all SPA shell — a 200 on this host is not evidence of a document
+hit_count: 1
+hosts:
+- host: https://www.iboss.com
+  documents:
+  - path: /.well-known/brand-facts.json
+    status: 200
+    file: iboss-brand-facts.json
+    bytes: 5414
+    note: >-
+      Real served JSON document (not the SPA shell). Non-IANA-registered path;
+      a provider-authored structured brand/company record for AI engines, listing
+      certifications, key products, deployment options, pricing model and integrations.
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — not a document; RFC 9116 file is NOT served
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — NOT an agent card; no a2a/ artifact written
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA shell (18306 bytes) — NOT an agent card; no a2a/ artifact written
+- host: https://api.ibosscloud.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://cloud.iboss.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://status.iboss.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+- host: https://help.iboss.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: >-
+      1,039-byte HTML support-portal shell, not an RFC 8414 metadata document —
+      this host also answers 200 with HTML on /.well-known/oauth-protected-resource
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null

@@ -1,0 +1,60 @@
+generated: '2026-08-22'
+method: searched
+source: https://www.iboss.com/pricing
+plan_count: 3
+publishes_tiers: true
+publishes_prices: false
+pricing_model: >-
+  Subscription-based unified per-user / per-seat licensing. iboss states a single license
+  bundles SWG, CASB, ZTNA, DLP, browser isolation, SD-WAN and AI Chat Security with no
+  separate bandwidth charges. Tier names and feature bundles are published; monetary
+  amounts are not.
+note: >-
+  iboss names three packaging tiers on its pricing page but publishes NO price, currency,
+  billing period, quota or overage for any of them — every tier terminates in a "Get Demo"
+  or "Contact Us" action rather than a rate or a checkout. plan_count records the three
+  named tiers because they are genuinely published; every price field is null because
+  nothing was published to fill it, and no figure has been estimated. There is no
+  API-specific or usage-based pricing: iboss does not sell API access as a product, so
+  the administrative API is included with a platform subscription rather than metered.
+currency: null
+billing_period: null
+plans:
+- name: Zero Trust Core
+  price: null
+  currency: null
+  billing_period: null
+  included_quota: null
+  overage: null
+  limits: []
+  summary: Essential SASE foundation with CASB controls and web filtering.
+  source: https://www.iboss.com/pricing
+- name: Zero Trust Advanced
+  price: null
+  currency: null
+  billing_period: null
+  included_quota: null
+  overage: null
+  limits: []
+  summary: >-
+    Complete SASE platform with CASB, ZTNA private access and advanced threat
+    protection. Marked "Most Popular" on the pricing page.
+  source: https://www.iboss.com/pricing
+- name: Zero Trust Complete
+  price: null
+  currency: null
+  billing_period: null
+  included_quota: null
+  overage: null
+  limits: []
+  summary: >-
+    Enterprise SASE with advanced CASB, the full DLP suite and advanced threat
+    protection.
+  source: https://www.iboss.com/pricing
+adjacent_pricing_surfaces:
+- url: https://www.iboss.com/k12/pricing
+  note: K-12 education pricing route; also lead-capture rather than a published rate card.
+evidence:
+- {url: 'https://www.iboss.com/pricing', status: 200, detail: 'Three named tiers rendered; no monetary amounts anywhere on the page'}
+- {url: 'https://www.iboss.com/.well-known/brand-facts.json', status: 200, detail: 'pricingModel: "Subscription-based, per-user/per-seat licensing; unified platform pricing"'}
+- {url: 'https://www.iboss.com/llms-full.txt', status: 200, detail: '"Contact iboss for custom pricing based on organization size and specific requirements"'}
