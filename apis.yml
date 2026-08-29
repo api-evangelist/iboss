@@ -12,6 +12,17 @@ description: iboss, Inc. is a Boston-headquartered cybersecurity company founded
   which third parties including Datadog, Axonius, Google Security Operations and D3 Security integrate
   against; iboss publishes no public OpenAPI definition, developer portal or API reference, and its documentation
   host redirects to a sign-in-gated GitBook space.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.iboss.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/iboss/refs/heads/main/apis.yml
 x-type: company
