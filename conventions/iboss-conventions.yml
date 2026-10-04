@@ -18,10 +18,11 @@ base_path:
   versioned: false
   detail: No version segment appears in the path and no version header was returned.
 idempotency:
+  coverage: none
   supported: unknown
   header: null
   documented: false
-  scope: null
+  scope: []
   retention: null
   detail: >-
     No idempotency key header is documented and none could be observed, because no

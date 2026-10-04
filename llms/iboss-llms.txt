@@ -4,6 +4,9 @@
 
 ## Platform Capabilities
 
+- [AI Security](https://www.iboss.com/ai-security): Security and governance for people and autonomous AI agents, including discovery, policy, sensitive-data controls, activity retention, and access controls
+- [Data Security](https://www.iboss.com/data-security): Unified sensitive-data discovery and protection across web, cloud, SaaS, and AI traffic
+- [App Visibility & Control](https://www.iboss.com/application-security): Discover, assess, and control known, unknown, embedded-AI, and newly created applications
 - [Secure Web Gateway (SWG)](https://www.iboss.com/capabilities/swg): AI-powered web filtering with signatureless threat detection and unlimited HTTPS inspection
 - [Cloud Access Security Broker (CASB)](https://www.iboss.com/capabilities/casb): AI-driven shadow IT detection with dual-risk scoring across unlimited applications
 - [Zero Trust Network Access (ZTNA)](https://www.iboss.com/capabilities/ztna): VPN replacement with per-session identity-aware access, no bandwidth charges
@@ -12,7 +15,7 @@
 - [Remote Browser Isolation (RBI)](https://www.iboss.com/capabilities/browser-isolation): Zero-pixel browser isolation natively integrated into the SASE platform
 - [SaaS Security Posture Management (SSPM)](https://www.iboss.com/capabilities/sspm): AI-powered SaaS configuration risk management
 - [SD-WAN](https://www.iboss.com/sd-wan): Built-in Zero Trust SD-WAN with no bandwidth charges and auto-mesh topology
-- [Cloud-Managed Proxy & Firewall Appliances](https://www.iboss.com/capabilities/on-prem-gateway): Hardware appliances with zero-touch cloud management for datacenter and branch
+- [Cloud-Managed Gateway Appliances](https://www.iboss.com/capabilities/on-prem-gateway): Hardware appliances with zero-touch cloud management for datacenter and branch
 
 ## Key Differentiators
 

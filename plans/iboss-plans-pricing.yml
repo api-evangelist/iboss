@@ -1,6 +1,7 @@
 generated: '2026-08-22'
 method: searched
 source: https://www.iboss.com/pricing
+name: iboss API Plans
 plan_count: 3
 publishes_tiers: true
 publishes_prices: false
@@ -17,7 +18,7 @@ note: >-
   nothing was published to fill it, and no figure has been estimated. There is no
   API-specific or usage-based pricing: iboss does not sell API access as a product, so
   the administrative API is included with a platform subscription rather than metered.
-currency: null
+currency: ""
 billing_period: null
 plans:
 - name: Zero Trust Core
