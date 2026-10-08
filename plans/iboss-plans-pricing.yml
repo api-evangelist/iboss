@@ -59,3 +59,27 @@ evidence:
 - {url: 'https://www.iboss.com/pricing', status: 200, detail: 'Three named tiers rendered; no monetary amounts anywhere on the page'}
 - {url: 'https://www.iboss.com/.well-known/brand-facts.json', status: 200, detail: 'pricingModel: "Subscription-based, per-user/per-seat licensing; unified platform pricing"'}
 - {url: 'https://www.iboss.com/llms-full.txt', status: 200, detail: '"Contact iboss for custom pricing based on organization size and specific requirements"'}
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Zero Trust Core
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Zero Trust Advanced
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Zero Trust Complete
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
