@@ -64,5 +64,107 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-iboss is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/iboss_stock/
+iboss, Inc. is a Boston-headquartered cybersecurity company founded in 2003 that operates an AI-powered, cloud-native Zero Trust SASE (Secure Access Service Edge) platform used by more than 4,000 enterprise, US federal, state and local government, and K-12 education organizations. The platform consolidates Secure Web Gateway (SWG), Cloud Access Security Broker (CASB), Zero Trust Network Access (ZTNA), Data Loss Prevention (DLP), Remote Browser Isolation (RBI), SaaS Security Posture Management (SSPM), DNS security, SD-WAN and AI chat monitoring into a single containerized service in which each customer receives dedicated gateway containers rather than shared infrastructure. iboss is FedRAMP and StateRAMP authorized and holds SOC 2 Type II, FIPS 140-2, HIPAA, CJIS, FERPA and GDPR alignment. Platform administration and reporting run over an authenticated REST surface at api.ibosscloud.com/ibcloud/web, which third parties including Datadog, Axonius, Google Security Operations and D3 Security integrate against; iboss publishes no public OpenAPI definition, developer portal or API reference, and its documentation host redirects to a sign-in-gated GitBook space.
+
+**Areas:** Company · Security · Cybersecurity · Zero Trust · SASE · Secure Web Gateway · CASB · ZTNA · Data Loss Prevention · Network Security · Cloud Security · Compliance
+
+## iboss on APIs.io
+
+Everything profiled for iboss is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/iboss/](https://apis.io/providers/iboss/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [iboss Zero Trust SSE Platform API](https://apis.io/apis/iboss/iboss-zero-trust-sse-platform-api/) — Authenticated REST administration and reporting surface for the iboss Zero Trust SASE/SSE cloud platform, served under the /ibcloud/web path on the iboss…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Iboss Authentication](https://apis.io/security/iboss/iboss-authentication/)
+- [Iboss Domain Security](https://apis.io/security/iboss/iboss-domain-security/)
+- [Iboss Trust Center](https://apis.io/security/iboss/iboss-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Iboss Plans Pricing](https://apis.io/plans/iboss/iboss-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Iboss Rate Limits](https://apis.io/rate-limits/iboss/iboss-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.iboss.com)
+- [Documentation](https://docs.iboss.com)
+- [Getting started](https://www.iboss.com/get-demo)
+- [Pricing](https://www.iboss.com/pricing)
+- [Support](https://www.iboss.com/support)
+- [Blog](https://www.iboss.com/blog)
+- [Compliance](https://www.iboss.com/compliance)
+- [Terms of service](https://www.iboss.com/terms)
+- [Privacy policy](https://www.iboss.com/privacy-policy)
+- [GitHub](https://github.com/iboss)
+- [Status](https://status.iboss.com/ibcloud/app/cloudStatus.html)
+
+## API Evangelist rating
+
+**Kin Score 29.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 46.1 |
+
+**Agent readiness 5.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/iboss/](https://apis.io/providers/iboss/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for iboss: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/iboss/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
